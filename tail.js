@@ -10,12 +10,15 @@ const assertEqual = function(actual, expected) {
 const tail = function(array) {
 
   const newArray = array.slice(1);
+  console.log(newArray);
   return newArray;
 
 };
 const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
+const removeHead = tail(words);
+
 
 assertEqual(words.length, 3);
-console.log(words);
+//console.log(words);
+assertEqual(removeHead[0], "Lighthouse");
 
