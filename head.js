@@ -6,7 +6,7 @@
 //     console.log(`\u{1F6D1}\u{1F6D1}\u{1F6D1} Assertion Failed: ${actual} !== ${expected}`);
 //   }
 // };
-const assertEqual = require('./assertEqual');
+
 
 const head = function(array) {
   
