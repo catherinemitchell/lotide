@@ -29,7 +29,9 @@ assertArraysEqual([1, 2, 3], [3, 4, 5]); */
 const middle = function(array) {
 
   const middleElements = [];
-
+  if(array.length <= 1) {
+    return [];
+  }
   if (array.length % 2 === 0) {
   middleElements.push(array[Math.floor((array.length - 1) / 2)]);
   } 
@@ -41,3 +43,4 @@ const middle = function(array) {
 console.log(middle([1, 2, 3, 4, 5, 6]));
 console.log(middle([1, 2, 3]));
 console.log(middle([1, 2, 3, 4]));
+console.log(middle([1]));
