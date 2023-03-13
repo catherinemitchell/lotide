@@ -27,13 +27,13 @@ const takeUntil = function(array, callback) {
 
 const outcome = []; 
 
-for (const item of array) {  
-  if (callback(item)) { 
+for (let i = 0; i < array.length; i++) {
+  if (callback(array[i])) {
     return outcome;
-  }
-  outcome.push(item)
-}
-return outcome
+  } 
+  outcome.push(array[i]);
+} 
+  return outcome
 };
 
 
