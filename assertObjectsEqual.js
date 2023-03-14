@@ -1,12 +1,5 @@
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length === arr2.length) {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) return false;
-    }
-    return true
-  } 
-  return false;
-}
+const eqArrays = require('./eqArrays');
+
 
 const eqObjects = function(object1, object2) {
 
@@ -33,17 +26,16 @@ for (const element of arrOfKeys1) {
 return true
 }
 
-//this function will take in two objects and compare them, and then print if they are true they passed, if they are false or not the same, they fail
-const assertObjectsEqual = function(actual, expected) { //assertObjectsEqual function takes in two parameters which are objects - can't give it anything else
-  const inspect = require('util').inspect; //require the library of pre-written js functions
-  if (eqObjects(actual, expected)) { //calling upon eqObjects function to see if they are the same
-    console.log(`\u2705\u2705\u2705 Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`); //if they are pass it
+
+const assertObjectsEqual = function(actual, expected) { 
+  const inspect = require('util').inspect; 
+  if (eqObjects(actual, expected)) { 
+    console.log(`\u2705\u2705\u2705 Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`); 
   } else {
-    console.log(`\u{1F6D1}\u{1F6D1}\u{1F6D1} Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`); //if they aren't then fail
+    console.log(`\u{1F6D1}\u{1F6D1}\u{1F6D1} Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`); 
   }
 }
 
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject= { size: "medium", color: "red" };
-
 assertObjectsEqual(shirtObject, anotherShirtObject)
