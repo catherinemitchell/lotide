@@ -33,7 +33,7 @@ module.exports = {
   takeUntil,
   findKey,
 
-}; 
+};
   
 
 
